@@ -9,8 +9,10 @@ import Cocoa
 
 @main
 final class AppDelegate: NSObject, NSApplicationDelegate {
+    private var statusBarController: StatusBarController?
+
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        // Insert code here to initialize your application
+        self.statusBarController = StatusBarController()
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
