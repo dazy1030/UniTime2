@@ -10,6 +10,7 @@
 		43C7854127776A9600C1B444 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C7854027776A9600C1B444 /* AppDelegate.swift */; };
 		43C7854527776A9700C1B444 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43C7854427776A9700C1B444 /* Assets.xcassets */; };
 		43C7854827776A9700C1B444 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43C7854627776A9700C1B444 /* Main.storyboard */; };
+		43C78550277777BA00C1B444 /* StatusBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C7854F277777BA00C1B444 /* StatusBarController.swift */; };
 		43C785532777829F00C1B444 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 43C785522777829F00C1B444 /* Info.plist */; };
 /* End PBXBuildFile section */
 
@@ -19,6 +20,7 @@
 		43C7854427776A9700C1B444 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		43C7854727776A9700C1B444 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		43C7854927776A9700C1B444 /* UniTime2.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = UniTime2.entitlements; sourceTree = "<group>"; };
+		43C7854F277777BA00C1B444 /* StatusBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarController.swift; sourceTree = "<group>"; };
 		43C785522777829F00C1B444 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -53,6 +55,7 @@
 			isa = PBXGroup;
 			children = (
 				43C7854027776A9600C1B444 /* AppDelegate.swift */,
+				43C7854F277777BA00C1B444 /* StatusBarController.swift */,
 				43C7854427776A9700C1B444 /* Assets.xcassets */,
 				43C7854627776A9700C1B444 /* Main.storyboard */,
 				43C7854927776A9700C1B444 /* UniTime2.entitlements */,
@@ -153,6 +156,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43C78550277777BA00C1B444 /* StatusBarController.swift in Sources */,
 				43C7854127776A9600C1B444 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
