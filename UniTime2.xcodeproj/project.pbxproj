@@ -68,6 +68,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 43C7854C27776A9700C1B444 /* Build configuration list for PBXNativeTarget "UniTime2" */;
 			buildPhases = (
+				43C785512777784D00C1B444 /* ShellScript */,
 				43C7853927776A9600C1B444 /* Sources */,
 				43C7853A27776A9600C1B444 /* Frameworks */,
 				43C7853B27776A9600C1B444 /* Resources */,
@@ -125,6 +126,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		43C785512777784D00C1B444 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cd BuildTools\nSDKROOT=(xcrun --sdk macosx --show-sdk-path)\n#swift package update #Uncomment this line temporarily to update the version used to the latest matching your BuildTools/Package.swift file\nswift run -c release swiftformat --swiftversion 5.5 --self \"insert\" --stripunusedargs \"closure-only\" \"$SRCROOT\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		43C7853927776A9600C1B444 /* Sources */ = {
