@@ -1,7 +1,7 @@
 {
   "images" : [
     {
-      "filename" : "status_bar_icon_any.svg",
+      "filename" : "status_item_icon_any.svg",
       "idiom" : "universal"
     },
     {
@@ -11,7 +11,7 @@
           "value" : "dark"
         }
       ],
-      "filename" : "status_bar_icon_dark.svg",
+      "filename" : "status_item_icon_dark.svg",
       "idiom" : "universal"
     }
   ],

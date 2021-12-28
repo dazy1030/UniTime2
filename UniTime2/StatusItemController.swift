@@ -1,5 +1,5 @@
 //
-//  StatusBarController.swift
+//  StatusItemController.swift
 //  UniTime2
 //
 //  Created by Naoki Odajima on 2021/12/26.
@@ -7,8 +7,8 @@
 
 import AppKit
 
-final class StatusBarController: NSObject {
-    private let statusBarItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
+final class StatusItemController: NSObject {
+    private let item = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
     private let menu = NSMenu()
 
     override init() {
@@ -17,12 +17,12 @@ final class StatusBarController: NSObject {
     }
 
     private func setup() {
-        guard let barItemButton = self.statusBarItem.button else { return }
-        let icon = NSImage(imageLiteralResourceName: "StatusBarIcon")
+        guard let itemButton = self.item.button else { return }
+        let icon = NSImage(imageLiteralResourceName: "StatusItemIcon")
         icon.size = NSSize(width: 18, height: 18)
-        barItemButton.image = icon
+        itemButton.image = icon
         self.setupMenu()
-        self.statusBarItem.menu = self.menu
+        self.item.menu = self.menu
         self.menu.delegate = self
     }
 
@@ -33,7 +33,7 @@ final class StatusBarController: NSObject {
 
 // MARK: - NSMenuDelegate
 
-extension StatusBarController: NSMenuDelegate {
+extension StatusItemController: NSMenuDelegate {
     func menuWillOpen(_ menu: NSMenu) {
         guard let item = menu.item(at: 0) else { return }
         if let string = NSPasteboard.general.string(forType: .string) {

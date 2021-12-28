@@ -9,10 +9,10 @@ import Cocoa
 
 @main
 final class AppDelegate: NSObject, NSApplicationDelegate {
-    private var statusBarController: StatusBarController?
+    private var statusItemController: StatusItemController?
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        self.statusBarController = StatusBarController()
+        self.statusItemController = StatusItemController()
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
