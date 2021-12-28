@@ -9,6 +9,7 @@ import AppKit
 
 final class StatusBarController {
     private let statusBarItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
+    private let menu = NSMenu()
 
     init() {
         self.setup()
@@ -19,12 +20,6 @@ final class StatusBarController {
         let icon = NSImage(imageLiteralResourceName: "StatusBarIcon")
         icon.size = NSSize(width: 18, height: 18)
         barItemButton.image = icon
-        barItemButton.action = #selector(self.barItemButtonPressed(_:))
-        barItemButton.target = self
-    }
-
-    @objc private func barItemButtonPressed(_ sender: NSButton) {
-        // TODO: ボタンが押されたときの処理を実装
-        NSLog(#function)
+        barItemButton.menu = self.menu
     }
 }
