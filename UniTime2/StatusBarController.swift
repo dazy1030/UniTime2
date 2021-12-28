@@ -7,11 +7,12 @@
 
 import AppKit
 
-final class StatusBarController {
+final class StatusBarController: NSObject {
     private let statusBarItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
     private let menu = NSMenu()
 
-    init() {
+    override init() {
+        super.init()
         self.setup()
     }
 
@@ -20,6 +21,25 @@ final class StatusBarController {
         let icon = NSImage(imageLiteralResourceName: "StatusBarIcon")
         icon.size = NSSize(width: 18, height: 18)
         barItemButton.image = icon
-        barItemButton.menu = self.menu
+        self.setupMenu()
+        self.statusBarItem.menu = self.menu
+        self.menu.delegate = self
+    }
+
+    private func setupMenu() {
+        self.menu.addItem(withTitle: "", action: nil, keyEquivalent: "")
+    }
+}
+
+// MARK: - NSMenuDelegate
+
+extension StatusBarController: NSMenuDelegate {
+    func menuWillOpen(_ menu: NSMenu) {
+        guard let item = menu.item(at: 0) else { return }
+        if let string = NSPasteboard.general.string(forType: .string) {
+            item.title = string
+        } else {
+            item.title = "クリップボードは空です"
+        }
     }
 }
